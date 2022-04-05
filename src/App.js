@@ -1,46 +1,14 @@
-import { useState } from "react";
-import { useEffect } from "react";
-import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import CalendarContainer from "./pages/CalendarContainer";
+import Clock from "./components/Clock";
 
 function App() {
-  const [today, setToday] = useToday();
   return (
-    <div className="today-wrapper">
-      <div className="today">{today}</div>
-    </div>
+    <Routes>
+      <Route path="/" element={<CalendarContainer />} exact />
+      <Route path="/clock" element={<Clock />} />
+    </Routes>
   );
-}
-
-function clip(param) {
-  return param < 10 ? "0" + param.toString() : param;
-}
-
-function useToday() {
-  const [today, setToday] = useState("");
-
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      const week = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-      let now = new Date();
-      let todayYear = now.getFullYear();
-      let todayMonth = now.getMonth();
-      let todayDate = now.getDate();
-      let dayOfWeek = week[now.getDay()];
-      let hours = now.getHours();
-      let minutes = now.getMinutes();
-      let seconds = now.getSeconds();
-
-      setToday(
-        `${todayYear}/${clip(todayMonth)}/${clip(
-          todayDate
-        )} ${dayOfWeek} ${clip(hours)}:${clip(minutes)}:${clip(seconds)}`
-      );
-    }, 1000);
-
-    return () => clearTimeout(timeout);
-  }, [today]);
-
-  return [today, setToday];
 }
 
 export default App;
