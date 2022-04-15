@@ -1,12 +1,16 @@
 import "./index.css";
+import TodoCheck from "../../elements/TodoCheck";
+import TodoEdit from "./../../elements/TodoEdit";
+import TodoDelete from "./../../elements/TodoDelete";
+import TodoContent from "../../elements/TodoContent";
 
 const TodoItem = (props) => {
   return (
     <div className="todo-item">
-      <div className="todo-item-content">todo 컨텐츠</div>
-      <div className="todo-item-check">todo 체크</div>
-      <div className="todo-item-update">todo 수정</div>
-      <div className="todo-item-delete">todo 삭제</div>
+      <TodoContent />
+      <TodoCheck />
+      <TodoEdit />
+      <TodoDelete />
     </div>
   );
 };

@@ -4,6 +4,7 @@ const ConfirmButton = () => {
   const onClick = () => {
     const input = document.querySelector(".todo-input");
     console.log(input.value);
+    input.value = "";
   };
 
   return (

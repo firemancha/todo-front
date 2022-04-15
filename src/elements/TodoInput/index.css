@@ -3,6 +3,7 @@
   height: 40px;
   border-color: black;
   border-width: 0 0 3px 0;
-  font-size: 18px;
+  font-size: min(1.5vw, 24px);
+  font-weight: bold;
   padding: 0px 0px 0px 10px;
 }
