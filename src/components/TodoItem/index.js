@@ -7,8 +7,8 @@ import TodoContent from "../../elements/TodoContent";
 const TodoItem = (props) => {
   return (
     <div className="todo-item">
-      <TodoContent />
-      <TodoCheck />
+      <TodoContent isDone={props.isDone} content={props.content} />
+      <TodoCheck isDone={props.isDone} />
       <TodoEdit />
       <TodoDelete />
     </div>

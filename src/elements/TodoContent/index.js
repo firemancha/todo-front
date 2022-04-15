@@ -1,7 +1,17 @@
 import "./index.css";
 
-const TodoContent = () => {
-  return <div className="todo-item-content">todo 컨텐츠</div>;
+const TodoContent = ({ isDone, content }) => {
+  return (
+    <div
+      className="todo-item-content"
+      style={{
+        color: isDone ? "gray" : "black",
+        textDecoration: isDone ? "line-through" : null,
+      }}
+    >
+      {content}
+    </div>
+  );
 };
 
 export default TodoContent;
