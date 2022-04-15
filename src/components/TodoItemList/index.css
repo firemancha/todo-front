@@ -1,0 +1,9 @@
+.todo-item-list{
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  width: 50%;
+  align-items: center;
+  overflow-y: scroll;
+  margin: 80px 0px 80px 0px;
+}

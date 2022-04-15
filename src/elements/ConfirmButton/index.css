@@ -1,0 +1,15 @@
+.todo-confirm-button{
+  margin: 0px 0px 0px 20px;
+  width: 60px;
+  height: 40px;
+  font-size: 18px;
+  color: white;
+  background-color: black;
+  border: 0px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.todo-confirm-button:hover{
+  background-color:royalblue;
+}

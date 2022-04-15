@@ -1,0 +1,25 @@
+.todo-item {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  align-items: center;
+  margin: 5px 0px 5px 0px;
+}
+
+.todo-item-content{
+  width: 70%;
+  font-size: 18px;
+  padding: 0px 0px 0px 10px;
+}
+
+.todo-item-check{
+  width: 10%;
+}
+
+.todo-item-update{
+  width: 10%;
+}
+
+.todo-item-delete{
+  width: 10%;
+}
