@@ -1,9 +1,12 @@
 import "./index.css";
 
-const ConfirmButton = () => {
+const ConfirmButton = (props) => {
   const onClick = () => {
     const input = document.querySelector(".todo-input");
-    console.log(input.value);
+
+    if (!input.value) return;
+
+    props.onSubmit(input.value);
     input.value = "";
   };
 

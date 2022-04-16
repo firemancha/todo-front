@@ -5,7 +5,6 @@ const TodoInput = () => {
   const [todo, setTodo] = useState("");
 
   const onChange = (e) => {
-    console.log(e.target.value);
     setTodo(e.target.value);
   };
 
