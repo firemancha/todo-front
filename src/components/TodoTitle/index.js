@@ -1,32 +1,46 @@
 import { useState, useEffect } from "react";
+import TitleDate from "../../elements/TitleDate";
+import TitleDay from "../../elements/TitleDay";
 import "./index.css";
 
 const TodoTitle = () => {
   const [date, setDate] = useState("");
+  const [day, setDay] = useState("");
 
   useEffect(() => {
-    const now = new Date();
-    let year = now.getFullYear().toString();
-    let month = now.getMonth();
+    const today = new Date();
 
-    if (month < 10) {
-      month = "0" + month.toString();
+    let todayYear = today.getFullYear().toString();
+    let todayMonth = today.getMonth() + 1;
+
+    if (todayMonth < 10) {
+      todayMonth = "0" + todayMonth.toString();
     } else {
-      month = month.toString();
+      todayMonth = todayMonth.toString();
     }
 
-    let day = now.getDay();
+    let todayDate = today.getDate();
 
-    if (day < 10) {
-      day = "0" + day.toString();
+    if (todayDate < 10) {
+      todayDate = "0" + todayDate.toString();
     } else {
-      day = day.toString();
+      todayDate = todayDate.toString();
     }
 
-    setDate(year + " / " + month + " / " + day);
+    const days = ["SUN", "MON", "TUE", "WEN", "THU", "FRI", "SAT"];
+
+    let todayDay = today.getDay();
+
+    setDate(todayYear + " / " + todayMonth + " / " + todayDate);
+    setDay(days[todayDay]);
   }, []);
 
-  return <div className="todo-title">{date}</div>;
+  return (
+    <div className="todo-title">
+      <TitleDate date={date} />
+      <TitleDay day={day} />
+    </div>
+  );
 };
 
 export default TodoTitle;

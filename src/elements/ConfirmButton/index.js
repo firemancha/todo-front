@@ -2,12 +2,28 @@ import "./index.css";
 
 const ConfirmButton = (props) => {
   const onClick = () => {
-    const input = document.querySelector(".todo-input");
+    if (!props.inputRef.current.value) return;
 
-    if (!input.value) return;
+    props.onSubmit(props.inputRef.current.value);
 
-    props.onSubmit(input.value);
-    input.value = "";
+    let prevValue = props.inputRef.current.value;
+
+    props.inputRef.current.value = "";
+
+    let event = new Event("input", {
+      target: props.inputRef.current,
+      bubbles: true,
+    });
+
+    let tracker = props.inputRef.current._valueTracker;
+
+    if (tracker) {
+      tracker.setValue(prevValue);
+    }
+
+    props.inputRef.current.dispatchEvent(event);
+
+    props.inputRef.current.focus();
   };
 
   return (

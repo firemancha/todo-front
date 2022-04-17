@@ -33,7 +33,7 @@ const TodoContainer = () => {
 
   const onSubmit = (text) => {
     const todo = {
-      id: idx,
+      id: idx.current,
       content: text,
       isDone: false,
     };

@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { forwardRef, useState } from "react";
 import "./index.css";
 
-const TodoInput = () => {
+const TmpInput = (props, ref) => {
   const [todo, setTodo] = useState("");
 
   const onChange = (e) => {
@@ -11,6 +11,7 @@ const TodoInput = () => {
   return (
     <input
       className="todo-input"
+      ref={ref}
       type="text"
       placeholder="추가할 할 일을 적어주세요."
       value={todo}
@@ -20,4 +21,5 @@ const TodoInput = () => {
   );
 };
 
+const TodoInput = forwardRef(TmpInput);
 export default TodoInput;
