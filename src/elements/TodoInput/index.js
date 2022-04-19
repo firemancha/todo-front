@@ -1,8 +1,12 @@
-import { forwardRef, useState } from "react";
+import { forwardRef, useState, useEffect } from "react";
 import "./index.css";
 
-const TmpInput = (props, ref) => {
+const TmpInput = ({ value = "" }, ref) => {
   const [todo, setTodo] = useState("");
+
+  useEffect(() => {
+    setTodo(value);
+  }, []);
 
   const onChange = (e) => {
     setTodo(e.target.value);

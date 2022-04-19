@@ -1,14 +1,13 @@
 import "./index.css";
-import { useState } from "react";
 import { AiFillCheckCircle, AiOutlineCheckCircle } from "react-icons/ai";
 
-const TodoCheck = ({ isDone }) => {
+const TodoCheck = ({ isEditing, isDone, onCheck }) => {
   return (
     <div className="todo-item-check">
-      {isDone ? (
-        <AiFillCheckCircle size="36" color="black" />
+      {isEditing ? null : isDone ? (
+        <AiFillCheckCircle size="36" color="black" onClick={onCheck} />
       ) : (
-        <AiOutlineCheckCircle size="36" color="black" />
+        <AiOutlineCheckCircle size="36" color="black" onClick={onCheck} />
       )}
     </div>
   );

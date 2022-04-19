@@ -41,11 +41,47 @@ const TodoContainer = () => {
     idx.current += 1;
   };
 
+  const onEditInput = (id, text) => {
+    const todo = {
+      id: id,
+      content: text,
+      isDone: false,
+    };
+
+    setTodos(
+      todos.map((item) => {
+        return item.id === todo.id ? todo : item;
+      })
+    );
+  };
+
+  const onCheck = (id) => {
+    setTodos(
+      todos.map((todo) => {
+        return todo.id === id ? { ...todo, isDone: !todo.isDone } : todo;
+      })
+    );
+  };
+
+  const onDelete = (id) => {
+    setTodos(
+      todos.filter((todo) => {
+        return todo.id !== id;
+      })
+    );
+  };
+
   return (
     <div className="todo-container">
       <TodoTitle />
       <TodoForm onSubmit={onSubmit} />
-      <TodoItemList todos={todos} />
+      <TodoItemList
+        todos={todos}
+        setTodos={setTodos}
+        onCheck={onCheck}
+        onDelete={onDelete}
+        onEditInput={onEditInput}
+      />
     </div>
   );
 };

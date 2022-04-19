@@ -4,6 +4,12 @@ const ConfirmButton = (props) => {
   const onClick = () => {
     if (!props.inputRef.current.value) return;
 
+    if (props.todoID) {
+      props.onEditInput(props.todoID, props.inputRef.current.value);
+      props.setIsEditing(false);
+      return;
+    }
+
     props.onSubmit(props.inputRef.current.value);
 
     let prevValue = props.inputRef.current.value;
