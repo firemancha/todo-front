@@ -1,4 +1,8 @@
-.calendar {
+.calendar-template {
+  display: flex;
+  flex-direction: column;
   width: 90%;
-  height: 100%;
+  height: 90%;
+  border: 2px solid black;
+  border-radius: 20px;
 }

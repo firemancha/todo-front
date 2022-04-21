@@ -7,7 +7,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<CalendarContainer />} exact />
-      <Route path="/list" element={<TodoContainer />} />
+      <Route path="/:id/list" element={<TodoContainer />} />
     </Routes>
   );
 }

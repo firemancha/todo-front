@@ -1,13 +1,16 @@
 import "./index.css";
+import CalendarHeader from "../CalendarHeader";
+import CalendarFooter from "../CalendarFooter";
+import CalendarContent from "../CalendarContent";
 
-const Calendar = () => {
+const CalendarTemplate = () => {
   return (
-    <div className="calendar">
-      <div className="calendar-header">calendar-header</div>
-      <div className="calendar-content">calendar-content</div>
-      <div className="calendar-footer">calendar-footer</div>
+    <div className="calendar-template">
+      <CalendarHeader />
+      <CalendarContent />
+      <CalendarFooter />
     </div>
   );
 };
 
-export default Calendar;
+export default CalendarTemplate;
