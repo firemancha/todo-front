@@ -11,14 +11,14 @@ const CalendarHeader = (props) => {
         </div>
         <div className="calendar-header-title-button">{today.month}</div>
       </div>
-      <div className="calendar-header-day">
-        <div className="calendar-header-day-sun">일</div>
-        <div className="calendar-header-day-week">월</div>
-        <div className="calendar-header-day-week">화</div>
-        <div className="calendar-header-day-week">수</div>
-        <div className="calendar-header-day-week">목</div>
-        <div className="calendar-header-day-week">금</div>
-        <div className="calendar-header-day-sat">토</div>
+      <div className="calendar-header-day-list">
+        <div className="calendar-header-day header-sun">일</div>
+        <div className="calendar-header-day header-week">월</div>
+        <div className="calendar-header-day header-week">화</div>
+        <div className="calendar-header-day header-week">수</div>
+        <div className="calendar-header-day header-week">목</div>
+        <div className="calendar-header-day header-week">금</div>
+        <div className="calendar-header-day header-sat">토</div>
       </div>
     </div>
   );

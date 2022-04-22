@@ -17,7 +17,7 @@ const CalendarContent = () => {
     <div className="calendar-content">
       {tmp.map((i) => {
         return (
-          <div key={i} className={`calendar-content-hello${i}`}>
+          <div key={i} className={`calendar-content-date ${i}`}>
             <Link to={`${i}/list/`}>{i}</Link>
           </div>
         );
